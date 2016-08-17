@@ -26,3 +26,45 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+add_theme_support( 'post-thumbnails' ); 
+
+
+//initialize widget area for homepage hero
+function home_widgets_init() {
+
+  register_sidebar( array(
+    'name'          => 'Home Hero Area',
+    'id'            => 'home_hero',
+    'before_widget' => '<div>',
+    'after_widget'  => '</div>'
+  ) );
+
+}
+add_action( 'widgets_init', 'home_widgets_init' );
+
+
+
+//remove 'category : ', 'archive : ', etc, from page titles
+add_filter( 'get_the_archive_title', function ($title) {
+
+    if ( is_category() ) {
+
+            $title = single_cat_title( '', false );
+
+        } elseif ( is_tag() ) {
+
+            $title = single_tag_title( '', false );
+
+        } elseif ( is_author() ) {
+
+            $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+
+        }
+
+    return $title;
+
+});
+?>
+
+

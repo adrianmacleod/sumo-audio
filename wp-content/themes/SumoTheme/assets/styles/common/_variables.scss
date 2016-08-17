@@ -1,9 +1,30 @@
 // Glyphicons font path
-$icon-font-path:        "../fonts/";
+$icon-font-path: "../fonts/";
+
+// Fonts
+@font-face {
+    font-family: 'brandon_grotesquebold';
+    src: url('../fonts/brandon_bld-webfont.eot');
+    src: url('../fonts/brandon_bld-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/brandon_bld-webfont.woff2') format('woff2'),
+         url('../fonts/brandon_bld-webfont.woff') format('woff'),
+         url('../fonts/brandon_bld-webfont.ttf') format('truetype'),
+         url('../fonts/brandon_bld-webfont.svg#brandon_grotesquebold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+$headerFont: 'brandon_grotesquebold', Arial, sans-serif; 
+
 
 // Grid settings
 $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
 // Colors
-$brand-primary:         #27ae60;
+$brand-primary: #00557F;
+$brand-secondary: #F16764;
+
+$background-colour: #FEF4F0
+
